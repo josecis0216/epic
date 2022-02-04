@@ -1,5 +1,42 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 100%">
+    <v-row no-gutters>
+      <v-col cols="12" sm="6" md="8">
+        <v-card class="pa-2" outlined tile style="background-color: gray">
+          <div style="background-color: gray; padding: 55px">
+            <h2>Epic Flooring Solutions</h2>
+            <p>
+              We pride ourselves in completing the best work possible for your
+              flooring needs. View our work below to see how we can help you get
+              the amazing floor you deserve
+            </p>
+            <v-btn>View Our Work</v-btn>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="6" md="4">
+        <v-card class="pa-2" outlined tile style="background-color: orange">
+          <div style="padding: 55px; background-color: orange">
+            <h3>Our Services</h3>
+            <div v-for="service in services" :key="service">
+              <v-icon icon="mdi-lock" color="white" style="margin-bottom: 5px">
+                mdi-lock
+              </v-icon>
+              {{ service }}
+            </div>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-divider></v-divider>
+    <v-row>
+      <v-col cols="6" sm="12" md="12" lg="6">
+        <h2>Get a Quote For Your Project</h2>
+      </v-col>
+      <v-col cols="6" sm="12" md="12" lg="6" class="text-lg-right">
+        <v-btn x-large color="success" dark to="/contact"> Free Quote </v-btn>
+      </v-col>
+    </v-row>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -9,143 +46,51 @@
           height="200"
         />
       </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
+    </v-row>
+    <v-row class="text-center">
+      <Reviews />
+    </v-row>
+    <v-row>
+      <v-col cols="12" sm="12" lg="12" md="12">
+        <v-carousel v-model="model">
+          <v-carousel-item
+            v-for="(color, i) in colors"
+            :key="color"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
           >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
+            <v-sheet :color="color" height="100%" width="100%" tile>
+              <v-row class="fill-height" align="center" justify="center">
+                <div class="text-h2">Slide {{ i + 1 }}</div>
+              </v-row>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
+import Reviews from "./Reviews.vue";
 
-    data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
-    }),
-  }
+export default {
+  name: "HelloWorld",
+
+  data: () => ({
+    model: 0,
+    colors: ["primary", "secondary", "yellow darken-2", "red", "orange"],
+    services: [
+      "Flooring",
+      "Power Wash",
+      "Warehouses",
+      "Garages",
+      "Decks",
+      "Sealing",
+    ],
+  }),
+  components: {
+    Reviews,
+  },
+};
 </script>

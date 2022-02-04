@@ -2,11 +2,10 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
       dark
     >
       <div class="d-flex align-center">
-        <v-img
+          <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
@@ -27,23 +26,27 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn to="/">
+        Home
+      </v-btn>
+      <v-btn to="/about">
+         About
+      </v-btn>
+      <v-btn to="/contact">
+         Contact Us
       </v-btn>
     </v-app-bar>
 
     <v-main>
       <router-view/>
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
+
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
@@ -51,5 +54,8 @@ export default {
   data: () => ({
     //
   }),
+  components: {
+    Footer,
+  }
 };
 </script>
