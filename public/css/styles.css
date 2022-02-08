@@ -1,0 +1,13 @@
+body {
+    background-color: orange;
+}
+
+.cta {
+    font-size: 40px;
+    color:black;
+    padding:25px;
+}
+#cta-btn {
+    margin: 25px;
+    font-size:40px;
+}

@@ -31,12 +31,12 @@
       </v-col>
     </v-row>
     <v-divider></v-divider>
-    <v-row style="padding:100px;">
+    <v-row>
       <v-col cols="6" sm="12" md="12" lg="6">
-        <h2>Get a Quote For Your Project</h2>
+        <h2 class="cta">Get a Quote For Your Project</h2>
       </v-col>
       <v-col cols="6" sm="12" md="12" lg="6" class="text-lg-right">
-        <v-btn x-large color="success" dark to="/contact"> Free Quote </v-btn>
+        <v-btn id="cta-btn" x-large color="success" dark to="/contact"> Free Quote </v-btn>
       </v-col>
     </v-row>
     <!--<v-row class="text-center">
@@ -49,26 +49,24 @@
         />
       </v-col>
     </v-row>-->
-    <v-row style="margin-bottom:25px;">
+    <v-row style="max-width:850px;margin: 0 auto 25px auto;">
       <v-col cols="12">
-        <v-card class="pa-2" outlined tile>
+        <v-card class="pa-2">
           <h3 class="text-center">How it Works</h3>
           <v-row v-for="work in works" :key="work.title">
-            <v-col cols="3"></v-col>
-            <v-col cols="3">
+            <v-col cols="3" sm="12" lg="6">
               <v-img
                 max-height="150"
                 max-width="250"
                 :src="work.url"
               ></v-img>
             </v-col>
-            <v-col cols="3">
+            <v-col cols="3" sm="12" lg="6">
               <div>
                 <h4>{{ work.title }}</h4>
                 <p>{{ work.description }}</p>
               </div>
             </v-col>
-            <v-col cols="3"></v-col>
           </v-row>
         </v-card>
       </v-col>

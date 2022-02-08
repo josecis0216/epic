@@ -9,7 +9,6 @@
 </template>
 
 <script>
-
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 
@@ -25,3 +24,7 @@ export default {
   }
 };
 </script>
+
+<style>
+  @import '../public/css/styles.css';
+</style>
