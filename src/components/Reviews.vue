@@ -4,8 +4,11 @@
     <v-row>
       <v-col cols="4" v-for="review in reviews" :key="review.review">
         <v-card elevation="2" >
+            <v-icon size="24px" v-for="i in 5" :key="i">
+             mdi-star
+            </v-icon><br>
+            {{ review.review }}
           <v-divider></v-divider>
-          {{ review.review }}<br>
           - {{ review.author }}
         </v-card>
       </v-col>
@@ -21,17 +24,18 @@ export default {
         {
           review: "What a great service provided by Epic!",
           rating: 5,
-          author: "Jose Cisneros",
+          author: "Keith Berne",
         },
         {
-          review: "What a great service provided by Epic!",
+          review: `Epic was great to work with, very professional and did an awesome job with my garage floors. I highly reccomend to 
+          anyone looking at getting epoxy floors`,
           rating: 5,
-          author: "Jose Cisneros",
+          author: "Lauren Price",
         },
         {
-          review: "What a great service provided by Epic!",
+          review: "Incredible job! Will definitely use these guys again at my next jobs.",
           rating: 5,
-          author: "Jose Cisneros",
+          author: "Paul Williams",
         },
       ],
     };

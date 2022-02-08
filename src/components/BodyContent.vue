@@ -101,7 +101,7 @@
 import Reviews from "./Reviews.vue";
 
 export default {
-  name: "HelloWorld",
+  name: "Body",
 
   data: () => ({
     model: 0,

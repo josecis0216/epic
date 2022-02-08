@@ -20,7 +20,7 @@
           dark
           icon
         >
-        <a :href="icon.url" :targe="icon.target">
+        <a :href="icon.url" :target="icon.target" style="text-decoration:none;color:white;">
           <v-icon size="32px">
              {{ icon.name }}
           </v-icon>
@@ -40,9 +40,9 @@
     data: () => ({
       icons: [
         {name: 'mdi-facebook', url: 'https://www.facebook.com', target: '_blank'},
-        {name:'mdi-twitter', url: '', target: '_blank'},
-        {name:'mdi-linkedin', url:'', target: '_blank'},
-        {name:'mdi-instagram', url:'', target: '_blank'},
+        {name:'mdi-twitter', url: 'https://www.twitter.com', target: '_blank'},
+        {name:'mdi-linkedin', url:'https://www.linkedin.com', target: '_blank'},
+        {name:'mdi-instagram', url:'https://www.instagram.com', target: '_blank'},
       ]
     }),
   }
