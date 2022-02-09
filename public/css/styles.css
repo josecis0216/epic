@@ -7,3 +7,32 @@
     margin: 25px;
     font-size:40px;
 }
+
+.subheading {
+    font-size:28px;
+}
+
+@media only screen and (max-width: 600px) {
+    #aboutBanner {
+        max-width:100%;
+        margin:auto;
+        padding:15px;
+    }
+    #ytVideo {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width:100%;
+        height:100%;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #aboutBanner {
+        max-width:50%;
+        margin:auto;
+    }
+    #ytVideo {
+        width: 665px;
+        height: 335px;
+    }
+}

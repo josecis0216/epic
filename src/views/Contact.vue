@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="6" sm="12" lg="6">
+      <v-col cols="12" sm="12" lg="6">
         <h2>Get in contact with us!</h2>
         <p>Bern Cortes</p>
         <p>801-555-5555</p>
@@ -14,9 +14,9 @@
           ></v-btn
         >
       </v-col>
-      <v-col cols="6" sm="12" lg="6">
+      <v-col cols="12" sm="12" lg="6">
         <form
-          action="https://formsubmit.co/josecis0216@gmail.com"
+          action="https://formsubmit.co/329c6ceb4b3d8edb24d8a2c1d628d64f"
           method="POST"
         >
           <v-text-field
@@ -63,7 +63,7 @@
           ></v-textarea>
           <v-btn class="mr-4" type="submit" @click="submit()"> submit </v-btn>
           <v-btn @click="clear"> clear </v-btn>
-          <v-alert type="success" v-if="show"></v-alert>
+          <v-alert type="success" v-if="show">Successfully sent, thank you</v-alert>
         </form>
       </v-col>
     </v-row>

@@ -9,7 +9,7 @@
       tile
     >
       <v-card-title>
-        <strong class="subheading">Check out more content on social media!</strong>
+        <strong class="subheading">Follow Us on social media!</strong>
 
         <v-spacer></v-spacer>
 

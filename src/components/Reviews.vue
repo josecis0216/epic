@@ -2,7 +2,7 @@
   <v-container>
     <h3>Client Reviews</h3>
     <v-row>
-      <v-col cols="4" v-for="review in reviews" :key="review.review">
+      <v-col cols="12" lg="4" v-for="review in reviews" :key="review.review">
         <v-card elevation="2" >
             <v-icon size="24px" v-for="i in 5" :key="i">
              mdi-star

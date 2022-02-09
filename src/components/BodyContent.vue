@@ -14,7 +14,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="6" md="4">
+      <v-col cols="12" sm="12" md="4">
         <v-card class="pa-2" outlined tile style="background-color: orange">
           <div style="padding: 55px; background-color: orange">
             <h2>Our Services</h2>
@@ -32,10 +32,10 @@
     </v-row>
     <v-divider></v-divider>
     <v-row>
-      <v-col cols="6" sm="12" md="12" lg="6">
+      <v-col cols="12" xs="12" sm="12" md="12" lg="6">
         <h2 class="cta">Get a Quote For Your Project</h2>
       </v-col>
-      <v-col cols="6" sm="12" md="12" lg="6" class="text-lg-right">
+      <v-col cols="12" xs="12" sm="12" md="12" lg="6" class="text-lg-right">
         <v-btn id="cta-btn" x-large color="success" dark to="/contact"> Free Quote </v-btn>
       </v-col>
     </v-row>
@@ -50,18 +50,18 @@
       </v-col>
     </v-row>-->
     <v-row style="max-width:850px;margin: 0 auto 25px auto;">
-      <v-col cols="12">
+      <v-col cols="12" xs="12" sm="12">
         <v-card class="pa-2">
           <h3 class="text-center">How it Works</h3>
           <v-row v-for="work in works" :key="work.title">
-            <v-col cols="3" sm="12" lg="6">
+            <v-col cols="12" sm="12" lg="4">
               <v-img
                 max-height="150"
                 max-width="250"
                 :src="work.url"
               ></v-img>
             </v-col>
-            <v-col cols="3" sm="12" lg="6">
+            <v-col cols="12" sm="12" lg="8">
               <div>
                 <h4>{{ work.title }}</h4>
                 <p>{{ work.description }}</p>

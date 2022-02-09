@@ -23,14 +23,14 @@
         />
       </div>-->
       <div>
-          <a to="/" style="text-decoration:none;color:white;font-size:55px;">Epic</a>
+          <a href="/" style="text-decoration:none;color:white;font-size:55px;">Epic</a>
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn to="/">
+      <!--<v-btn to="/">
         Home
-      </v-btn>
+      </v-btn>-->
       <v-btn to="/about">
          About
       </v-btn>

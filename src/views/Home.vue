@@ -9,6 +9,7 @@ import BodyContent from "../components/BodyContent";
 
 export default {
   name: "Home",
+  title: "Epic Flooring",
 
   components: {
     HelloWorld,
