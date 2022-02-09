@@ -5,16 +5,23 @@
         <h2>Get in contact with us!</h2>
         <p>Bern Cortes</p>
         <p>801-555-5555</p>
-        <address>
-          1111 Street Drive
-          Salt Lake City, 84116
-        </address>
-        <v-btn><a href="tel:801-555-5555" style="text-decoration:none;color:black;">Call Today!</a></v-btn>
+        <address>1111 Street Drive Salt Lake City, 84116</address>
+        <v-btn
+          ><a
+            href="tel:801-555-5555"
+            style="text-decoration: none; color: black"
+            >Call Today!</a
+          ></v-btn
+        >
       </v-col>
       <v-col cols="6" sm="12" lg="6">
-        <form>
+        <form
+          action="https://formsubmit.co/josecis0216@gmail.com"
+          method="POST"
+        >
           <v-text-field
             v-model="name"
+            name="name"
             :error-messages="nameErrors"
             :counter="20"
             label="Name"
@@ -24,6 +31,7 @@
           ></v-text-field>
           <v-text-field
             v-model="email"
+            name="email"
             :error-messages="emailErrors"
             label="E-mail"
             required
@@ -46,9 +54,16 @@
             @change="$v.checkbox.$touch()"
             @blur="$v.checkbox.$touch()"
           ></v-checkbox>-->
-
-          <v-btn class="mr-4" @click="submit"> submit </v-btn>
+          <v-textarea
+            name="message"
+            v-model="message"
+            label="Message"
+            @input="$v.message.$touch()"
+            @blur="$v.message.$touch()"
+          ></v-textarea>
+          <v-btn class="mr-4" type="submit" @click="submit()"> submit </v-btn>
           <v-btn @click="clear"> clear </v-btn>
+          <v-alert type="success" v-if="show"></v-alert>
         </form>
       </v-col>
     </v-row>
@@ -77,8 +92,10 @@ export default {
     name: "",
     email: "",
     select: null,
+    message: "",
     items: ["Epoxy Information", "Garage Floors", "Decks"],
     checkbox: false,
+    show: false,
   }),
 
   computed: {
@@ -114,11 +131,13 @@ export default {
   methods: {
     submit() {
       this.$v.$touch();
+      this.show = true;
     },
     clear() {
       this.$v.$reset();
       this.name = "";
       this.email = "";
+      this.message = "";
       this.select = null;
       this.checkbox = false;
     },
