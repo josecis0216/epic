@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex';
 
-Vue.use(Vuex)
+import coachesModule from './coaches/coaches.js';
+import requestsModule from './requests/requests.js';
+import authModule from './auth/index.js';
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+const store = createStore({
+    modules: {
+        coaches: coachesModule,
+        reqs: requestsModule,
+        auth: authModule
+    }, 
+    mutations: {
+
+    },
+    actions: {
+
+    }
+});
+
+export default store;
