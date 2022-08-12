@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
-import BodyContent from "../components/BodyContent";
+import HelloWorld from "../../components/HelloWorld.vue";
+import BodyContent from "../../components/BodyContent.vue";
 
 export default {
   name: "Home",
